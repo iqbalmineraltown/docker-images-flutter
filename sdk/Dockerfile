@@ -10,5 +10,12 @@ RUN git clone --branch v${FLUTTER_VERSION} https://github.com/flutter/flutter.gi
 
 ENV PATH ${PATH}:${FLUTTER_HOME}/bin:${FLUTTER_HOME}/bin/cache/dart-sdk/bin
 
+# ruby
+RUN sudo apt-get install -y --allow-unauthenticated --no-install-recommends ruby-full
+RUN ruby --version
+
+# fastlane
+RUN sudo gem install fastlane -NV
+
 # doctor
 RUN flutter doctor
